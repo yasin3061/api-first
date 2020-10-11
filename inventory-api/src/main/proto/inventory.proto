@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "com.yasinbee.apifirst.inventory.api.dto";
+
+message InventoryStatus {
+  int64 unique_item_id = 1;
+  string item_name = 2;
+  string item_description = 3;
+  int32 available_quantity = 4;
+}
+
+message InventoryStatusRequest {
+  int64 item_id = 1;
+}
+
+service InventoryService {
+  rpc getInventoryStatus(InventoryStatus) returns (InventoryStatusRequest);
+}
