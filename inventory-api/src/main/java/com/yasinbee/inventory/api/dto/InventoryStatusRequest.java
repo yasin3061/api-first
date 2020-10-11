@@ -1,4 +1,4 @@
-package com.yasinbee.apifirst.order.dto;
+package com.yasinbee.inventory.api.dto;
 
 import java.util.StringJoiner;
 

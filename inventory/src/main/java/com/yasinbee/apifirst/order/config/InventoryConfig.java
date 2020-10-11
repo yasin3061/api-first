@@ -1,6 +1,6 @@
 package com.yasinbee.apifirst.order.config;
 
-import com.yasinbee.apifirst.order.service.InventoryService;
+import com.yasinbee.inventory.api.service.InventoryService;
 import com.yasinbee.apifirst.order.service.InventoryServiceImpl;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;

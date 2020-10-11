@@ -1,7 +1,8 @@
 package com.yasinbee.apifirst.order.service;
 
-import com.yasinbee.apifirst.order.dto.InventoryStatus;
-import com.yasinbee.apifirst.order.dto.InventoryStatusRequest;
+import com.yasinbee.inventory.api.dto.InventoryStatus;
+import com.yasinbee.inventory.api.dto.InventoryStatusRequest;
+import com.yasinbee.inventory.api.service.InventoryService;
 
 import java.util.HashMap;
 import java.util.Map;

@@ -1,7 +1,7 @@
 package com.yasinbee.apifirst.order.config;
 
 import com.yasinbee.apifirst.order.dao.OrderRepository;
-import com.yasinbee.apifirst.order.service.InventoryService;
+import com.yasinbee.inventory.api.service.InventoryService;
 import com.yasinbee.apifirst.order.service.OrderService;
 import com.yasinbee.apifirst.order.service.OrderServiceImpl;
 import org.springframework.boot.autoconfigure.domain.EntityScan;

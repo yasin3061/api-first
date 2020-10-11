@@ -2,11 +2,12 @@ package com.yasinbee.apifirst.order.service;
 
 import com.yasinbee.apifirst.order.dao.OrderRepository;
 import com.yasinbee.apifirst.order.dao.model.Order;
-import com.yasinbee.apifirst.order.dto.InventoryStatus;
-import com.yasinbee.apifirst.order.dto.InventoryStatusRequest;
 import com.yasinbee.apifirst.order.dto.OrderRequest;
 import com.yasinbee.apifirst.order.dto.OrderResponse;
 import com.yasinbee.apifirst.order.mapper.OrderMapper;
+import com.yasinbee.inventory.api.dto.InventoryStatus;
+import com.yasinbee.inventory.api.dto.InventoryStatusRequest;
+import com.yasinbee.inventory.api.service.InventoryService;
 
 import java.util.HashMap;
 import java.util.Map;

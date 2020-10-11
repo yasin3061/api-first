@@ -4,7 +4,8 @@ plugins {
 
 dependencies {
 
-    implementation project(':inventory')
+    implementation project(':inventory-api')
+    runtimeOnly project(':inventory')
 
     implementation "org.springframework.boot:spring-boot-starter-data-jpa"
     implementation "org.springframework.boot:spring-boot-starter-jdbc"
