@@ -1,6 +1,7 @@
 package com.yasinbee.apifirst.order.config;
 
 import com.yasinbee.apifirst.order.dao.OrderRepository;
+import com.yasinbee.apifirst.order.service.InventoryService;
 import com.yasinbee.apifirst.order.service.OrderService;
 import com.yasinbee.apifirst.order.service.OrderServiceImpl;
 import org.springframework.boot.autoconfigure.domain.EntityScan;
@@ -16,7 +17,7 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 public class OrderConfig {
 
     @Bean
-    public OrderService getOrderService(OrderRepository dao) {
-        return new OrderServiceImpl(dao);
+    public OrderService getOrderService(InventoryService inventoryService, OrderRepository dao) {
+        return new OrderServiceImpl(inventoryService, dao);
     }
 }
