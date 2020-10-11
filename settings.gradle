@@ -1,0 +1,5 @@
+rootProject.name = 'api-first'
+include 'app'
+include 'order'
+include 'inventory'
+
