@@ -1,12 +1,12 @@
 package com.yasinbee.apifirst.order.service;
 
+import com.yasinbee.apifirst.inventory.api.dto.InventoryStatus;
+import com.yasinbee.apifirst.inventory.api.dto.InventoryStatusRequest;
 import com.yasinbee.apifirst.order.dao.OrderRepository;
 import com.yasinbee.apifirst.order.dao.model.Order;
 import com.yasinbee.apifirst.order.dto.OrderRequest;
 import com.yasinbee.apifirst.order.dto.OrderResponse;
 import com.yasinbee.apifirst.order.mapper.OrderMapper;
-import com.yasinbee.inventory.api.dto.InventoryStatus;
-import com.yasinbee.inventory.api.dto.InventoryStatusRequest;
 import com.yasinbee.inventory.api.service.InventoryService;
 
 import java.util.HashMap;
@@ -28,8 +28,9 @@ public class OrderServiceImpl implements OrderService {
 
     @Override
     public OrderResponse placeOrder(OrderRequest request) {
-        InventoryStatusRequest inventoryStatusRequest = new InventoryStatusRequest();
-        inventoryStatusRequest.setItemId(inventoryNameToIdMap.get(request.getItem()));
+        InventoryStatusRequest inventoryStatusRequest = InventoryStatusRequest.newBuilder()
+                .setItemId(inventoryNameToIdMap.get(request.getItem()))
+                .build();
         InventoryStatus inventoryStatus =
                 inventoryService.getInventoryStatus(inventoryStatusRequest);
         if (enoughItemsAreAvailable(request, inventoryStatus)) {

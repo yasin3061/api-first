@@ -6,6 +6,7 @@ subprojects {
     group = 'com.yasinbee.apifirst'
     version = '0.0.1-SNAPSHOT'
 
+    apply plugin: 'idea'
     apply plugin: 'java'
     apply plugin: 'io.spring.dependency-management'
     apply plugin: 'java-library'

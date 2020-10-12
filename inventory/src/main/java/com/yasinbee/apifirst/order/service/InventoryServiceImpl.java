@@ -1,7 +1,7 @@
 package com.yasinbee.apifirst.order.service;
 
-import com.yasinbee.inventory.api.dto.InventoryStatus;
-import com.yasinbee.inventory.api.dto.InventoryStatusRequest;
+import com.yasinbee.apifirst.inventory.api.dto.InventoryStatus;
+import com.yasinbee.apifirst.inventory.api.dto.InventoryStatusRequest;
 import com.yasinbee.inventory.api.service.InventoryService;
 
 import java.util.HashMap;
@@ -22,11 +22,11 @@ public class InventoryServiceImpl implements InventoryService {
     }
 
     private InventoryStatus getBooksInventoryStatus() {
-        InventoryStatus status = new InventoryStatus();
-        status.setItemName("books");
-        status.setAvailableQuantity(5);
-        status.setItemDescription("Books are loved by all");
-        status.setUniqueItemId(99L);
-        return status;
+        return InventoryStatus.newBuilder()
+                .setItemName("books")
+                .setAvailableQuantity(5)
+                .setItemDescription("Books are loved by all")
+                .setUniqueItemId(99L)
+                .build();
     }
 }

@@ -1,35 +1,24 @@
-plugins {
-    id "com.google.protobuf" version "0.8.10"
-    id "java"
-}
+//apply plugin: 'java'
+apply plugin: 'java-library'
+apply plugin: 'idea'
+apply plugin: 'com.google.protobuf'
 
 dependencies {
     implementation 'com.google.protobuf:protobuf-java:3.11.0'
 }
 
-sourceSets {
-    main {
-        java {
-            srcDirs 'build/generated/source/proto/main/grpc'
-            srcDirs 'build/generated/source/proto/main/java'
-        }
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath 'com.google.protobuf:protobuf-gradle-plugin:0.8.13'
     }
 }
+
 
 protobuf {
     protoc {
         artifact = 'com.google.protobuf:protoc:3.10.1'
-    }
-
-    plugins {
-        grpc {
-            artifact = 'io.grpc:protoc-gen-grpc-java:1.25.0'
-        }
-    }
-
-    generateProtoTasks {
-        all()*.plugins {
-            grpc {}
-        }
     }
 }
