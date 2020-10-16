@@ -14,3 +14,7 @@ message InventoryStatus {
 message InventoryStatusRequest {
   int64 item_id = 1;
 }
+
+service InventoryService {
+  rpc getStatus(InventoryStatusRequest) returns (InventoryStatus);
+}

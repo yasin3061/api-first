@@ -17,7 +17,7 @@ public class InventoryServiceImpl implements InventoryService {
     }
 
     @Override
-    public InventoryStatus getInventoryStatus(InventoryStatusRequest request) {
+    public InventoryStatus getStatus(InventoryStatusRequest request) {
         return inventoryStatusMap.get(request.getItemId());
     }
 

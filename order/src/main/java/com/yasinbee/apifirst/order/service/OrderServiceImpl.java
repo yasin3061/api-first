@@ -32,7 +32,7 @@ public class OrderServiceImpl implements OrderService {
                 .setItemId(inventoryNameToIdMap.get(request.getItem()))
                 .build();
         InventoryStatus inventoryStatus =
-                inventoryService.getInventoryStatus(inventoryStatusRequest);
+                inventoryService.getStatus(inventoryStatusRequest);
         if (enoughItemsAreAvailable(request, inventoryStatus)) {
             return MAPPER.orderModelToResponse(dao.save(MAPPER.orderRequestToModel(request)));
         } else {
